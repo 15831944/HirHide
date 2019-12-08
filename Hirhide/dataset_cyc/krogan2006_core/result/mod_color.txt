@@ -1,0 +1,4 @@
+b	gp	y	gp	gp	b	gp	g	gp	gp	g	b	b	g	y	gp	gp	g	g	b	g	b	gp	b	y	gp	gp	g	g	g	b	b	gp	gp	
+g	bp	y	bp	bp	g	gp	b	gp	bp	b	g	g	b	y	bp	bp	b	b	g	b	g	bp	g	y	bp	bp	b	b	b	g	g	bp	bp	
+g	g	b	y	gp	gp	b	gp	g	g	gp	y	b	b	gp	gp	g	gp	g	b	g	b	g	b	gp	gp	gp	g	y	b	
+b	b	g	y	bp	bp	g	bp	b	b	bp	y	g	g	bp	bp	b	bp	b	g	b	g	b	g	bp	bp	bp	b	y	g	

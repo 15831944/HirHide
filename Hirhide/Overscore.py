@@ -22,9 +22,9 @@ class Overscore(object):
         print("MMR: %f"%MMR)
     ###########################################################################
 
-
-        #计算standarized recall
-
+        #计算geometric accuracy
+        #计算Sn
+        #L_truth_F,L_detected_F
         recall_list=[]
         for i in range(truth_L):
             r_list=[]
@@ -37,7 +37,7 @@ class Overscore(object):
             recall_list.append(recall)
         Recall=sum(recall_list)/len(recall_list)
 
-        '''# 计算Fraction of matched complexes
+        # 计算Fraction of matched complexes
         count=0
         for i in range(truth_L):
             i_indice=0
@@ -48,7 +48,7 @@ class Overscore(object):
                     i_indice=1
             count+=i_indice
         Fraction=count/truth_L
-        print("Fraction: %f"%Fraction)'''
+        print("Fraction: %f"%Fraction)
 
 
 
@@ -56,11 +56,11 @@ class Overscore(object):
     ###########################################################################
         a = str(round(Recall, 2))
         b = str(round(MMR, 2))
-        #c = str(round(Fraction, 2))
-        d = str(round(Recall +  MMR, 2))
+        c = str(round(Fraction, 2))
+        d = str(round(Fraction +  MMR, 2))
         overscore.write(d + "\n")
-        overscore.write(b + ","  + a + "\n")
-        overscore_F.write("["+b + "," + a + "], ")
+        overscore.write(b + ","  + c + "\n")
+        overscore_F.write("["+b + "," + c + "], ")
         for item in mates:
             Mate.write(str(item)+"\t")
         Mate.write("\n")

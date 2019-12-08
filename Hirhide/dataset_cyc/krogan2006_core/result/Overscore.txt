@@ -1,0 +1,42 @@
+HiHiCode.txt	1.83
+0.6,0.65,0.58
+Infomap.gen	0.69
+0.09,0.48,0.12
+CFinder.gen	0.22
+0.0,0.21,0.01
+mod_merge.gen	1.75
+0.56,0.66,0.53
+OSLOM.gen	0.7
+0.15,0.33,0.22
+HiHiCode.txt	1.94
+0.64,0.71,0.59
+Infomap.gen	0.71
+0.12,0.47,0.12
+CFinder.gen	0.21
+0.0,0.2,0.01
+mod_merge.gen	1.88
+0.63,0.71,0.55
+OSLOM.gen	0.71
+0.15,0.34,0.21
+HiHiCode.txt	1.95
+0.65,0.71,0.59
+Infomap.gen	0.71
+0.12,0.47,0.12
+CFinder.gen	0.21
+0.0,0.2,0.01
+mod_merge.gen	1.88
+0.63,0.71,0.55
+OSLOM.gen	0.71
+0.16,0.34,0.21
+HiHiCode.txt	1.95
+0.65,0.71,0.59
+HiHiCode.txt	1.95
+0.65,0.71,0.59
+Infomap.gen	0.71
+0.12,0.47,0.12
+CFinder.gen	0.21
+0.0,0.2,0.01
+mod_merge.gen	1.88
+0.63,0.71,0.55
+OSLOM.gen	0.71
+0.16,0.34,0.21

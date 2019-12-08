@@ -1,0 +1,11 @@
+-----------------------
+2019/03/14 19:31:25
+910 nodes, 2808 edges
+------Time Statistical (second)------
+load Graph: 0
+Mod time: 0
+Infomap time: 1
+LC time: 0
+OSLOM time: 332
+GCE time: 0
+CFinder time: 0

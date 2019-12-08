@@ -1,30 +1,26 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.interpolate import spline
-def execute(base,graphfile,type,item):
-
-    accuracy = open(base+"/result/accuracy"+item, "r")
-    il=40
-
-
-    '''#if graphfile=="biogrid_yeast_physical_unweighted" and type=="mips":
-    il=12 #interval间隔
-    end=120
-    if graphfile=="biogrid_yeast_physical_unweighted" and type== "cyc":
+def execute(base,graphfile,type):
+    accuracy = open(base+"/result/accuracy.txt", "r")
+    if graphfile=="biogrid_yeast_physical_unweighted" and type== "_cyc/":
+        il=23 #interval间隔
+        end=230
+    if graphfile=="biogrid_yeast_physical_unweighted" and type=="_mips/":
+        il=40 #interval间隔
+        end=200
+    if graphfile=="YeastNet" and type== "_cyc/":
+        il=21 #interval间隔
+        end=210
+    if graphfile=="YeastNet" and type=="_mips/":
+        il=24 #interval间隔
+        end=192
+    if graphfile=="krogan2006_core" and type== "_cyc/":
         il=15 #interval间隔
         end=150
-    if graphfile=="YeastNet" and type== "cyc":
-        il=16 #interval间隔
-        end=160
-    if graphfile=="YeastNet" and type=="mips":
-        il=5 #interval间隔
-        end=95
-    if graphfile=="krogan2006_core" and type== "cyc":
-        il=5 #interval间隔
-        end=85
-    if graphfile=="krogan2006_core" and type=="mips":
-        il=1 #interval间隔
-        end=19'''
+    if graphfile=="krogan2006_core" and type=="_mips/":
+        il=15 #interval间隔
+        end=150
     def get_average(list):
         list_new=[]
         print(len(list))
@@ -33,13 +29,12 @@ def execute(base,graphfile,type,item):
             list_new.append(sumil / il)
         return list_new
 
-    list = []
+    list=[]
     for line in accuracy:
-        line = line.strip().split("\t")
+        line=line.strip().split("\t")
         list.append(line)
-    print("list")
     print(len(list[0]))
-    end=len(list[0])-2
+    print(len(list[1]))
     hi=[float(i) for i in list[0][:end]]
     mod=[float(i) for i in list[1][:end]]
     list1=get_average(hi)
@@ -57,34 +52,13 @@ def execute(base,graphfile,type,item):
     y_new2 = spline(x, y2, x_new)
     #x_new = np.linspace(x.min(), x.max(), )
     #x_mod=np.array(x_mod)
-    plt.figure(figsize=(7,3))
-    plt.xlabel("Communities")
-    plt.ylabel("Accuracy")
-    if item=="HiHiCode-MOD.txt":
-        plt.plot(x_new, y_new1, label="HiHiCode-MOD", linewidth='1.5', color="#FF0000")
-        plt.plot(x_new, y_new2, label="MOD", linewidth='1.5', color="#000000")
-        plt.xticks([])
-        # plt.ylim(0.0, 0.5)
-        plt.yticks([])
-        #plt.yticks(np.linspace(0.2, 0.8, 7, endpoint=True))
-        plt.legend(loc='lower right')
-        plt.savefig(base+"/hiddenness1.pdf")
-    if item=="HiHiCode-Infomap.txt":
-        plt.plot(x_new, y_new1, label="HiHiCode-Infomap", linewidth='1.5', color="#FF0000")
-        plt.plot(x_new, y_new2, label="Infomap", linewidth='1.5', color="#000000")
-        plt.xticks([])
-        # plt.ylim(0.0, 0.5)
-        plt.yticks([])
-        #plt.yticks(np.linspace(0.2, 0.7, 6, endpoint=True))
-        plt.legend(loc='lower right')
-        plt.savefig(base+"/hiddenness2.pdf")
-    if item=="HiHiCode-LC.txt":
-        plt.plot(x_new, y_new1, label="HiHiCode-LC", linewidth='1.5', color="#FF0000")
-        plt.plot(x_new, y_new2, label="LC", linewidth='1.5', color="#000000")
-        plt.xticks([])
-        # plt.ylim(0.0, 0.5)
-        plt.yticks([])
-        #plt.yticks(np.linspace(0, 0.6, 7, endpoint=True))
-        plt.legend(loc='lower right')
-        plt.savefig(base+"/hiddenness3.pdf")
+    plt.figure(figsize=(7,3.5))
+    plt.plot(x_new,y_new1,label="HiHiCode",linewidth = '1.5',color="#FF0000")
+    plt.plot(x_new,y_new2,label="MOD",linewidth = '1.5',color="#000000")
+    plt.xticks([])
+    #plt.ylim(0.0, 0.5)
+    plt.yticks(np.linspace(0.25, 0.5, 6, endpoint=True))
+    plt.legend(loc='upper right')
+    plt.savefig(base+"/hiddenness5.pdf")
     #plt.show()
+

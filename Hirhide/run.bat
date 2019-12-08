@@ -1,0 +1,1 @@
+run.exe F:/BioHICODE/SC_test/ lc

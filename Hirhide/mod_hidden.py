@@ -5,35 +5,31 @@ class Modularity(object):
         """
         Constructor
         """
-    def execute(self,test,truth_F,base,graphfile,item):
+
+    def execute(self,test,truth_F,base,graphfile):
         #test为传入的社团
-        Mate = open(base + "/result/Mate" + item, "r")
+        Mate = open(base+ "/result/Mate.txt", "r")
         correspond = open(base + "/correspond.txt", "r")
         graph = open(base + "/" + graphfile + ".txt", "r")
-        ModHidden_protein = open(base+ "/result/ModHidden_protein"+item, "w")
-        Detected_protein = open(base + "/result/Detected_protein"+item, "w")
-        Truth_protein = open(base + "/result/Truth_protein"+item, "w")
-        accuracy = open(base + "/result/accuracy" + item, "w")
-        if item=="HiHiCode-MOD.txt" :
-            pair="MOD.txt"
-        elif item=="HiHiCode-Infomap.txt":
-            pair="Infomap.gen"
-        else:
-            pair="LC.gen"
-        mod_detected = open(base + "/"+pair, "r")
-        Mate_pair=open(base + "/result/Mate" + pair, "r")
+        ModHidden_protein = open(base+ "/result/ModHidden_protein.txt", "w")
+        Detected_protein = open(base + "/result/Detected_protein.txt", "w")
+        Truth_protein = open(base + "/result/Truth_protein.txt", "w")
+
         lenoftruth=len(truth_F)
 
         modvalue=self.Modvalue(test,graph)
         hiddenness = self.get_hiddenness(modvalue, test)
-        #hiddenness_hi=self.get_hiddenness(modvalue, test)
+        '''print("modvalue")
+        print(modvalue)
+        print(len(modvalue))
+
+        print("hiddenness")
+        print(hiddenness)
+        print(sum(hiddenness)/len(test))'''
 
         #筛选处于hiddenness layer中的社团
-        print("base")
-        print(base)
-        print("item")
-        print(item)
         id_layer=self.classify(test)
+
         assert len(id_layer)==1
 
         ##################################################
@@ -48,17 +44,15 @@ class Modularity(object):
             Mate_read = Mate_read.strip().split()
             print(Mate_read)
             Mate_all.append(Mate_read)
-        Mate_all1 = []
-        for Mate_read in Mate_pair:
-            Mate_read = Mate_read.strip().split()
-            print(Mate_read)
-            Mate_all1.append(Mate_read)
         Mate_hi=Mate_all[0]
-        Mate_mod = Mate_all1[0]
+        Mate_mod = Mate_all[3]
 
         #id_detected的下标即为detected的下标
         id_detected=Mate_hi[lenoftruth:]
 
+        '''print(id_detected)
+        print("id_detected")
+        print(len(id_detected))'''
 
         for i in range(len(id_detected)):
             if id_detected[i]!='-1':
@@ -96,7 +90,7 @@ class Modularity(object):
                 ModHidden_protein.write(correspond_list[str(i)]+"\t")
             ModHidden_protein.write("\n")
             # id_detected[id]中存的是truth_F的序号
-
+        mod_detected = open(base + "/mod_merge.gen", "r")
         mod_list = self.get_list(mod_detected)
         truth = Mate_hi[:lenoftruth]
         truth_mod=Mate_mod[:lenoftruth]
@@ -104,7 +98,6 @@ class Modularity(object):
         m=[]
         t1=[]
         t2=[]
-        hiddenness_new=[]
         for i in range(len(truth_mod)):
             if truth_mod[i]!='-1':
                 num=int(truth_mod[i])-lenoftruth
@@ -116,7 +109,6 @@ class Modularity(object):
             if truth[i]!='-1':
                 num=int(truth[i])-lenoftruth
                 d.append(test[num])
-                hiddenness_new.append(hiddenness[num])
                 t1.append(truth_F[i])
                 for k in test[num]:
                     Detected_protein.write(correspond_list[str(k)] + "\t")
@@ -128,83 +120,21 @@ class Modularity(object):
                 Detected_protein.write("0" + "\n")
                 Truth_protein.write("0" + "\n")
                 d.append(0)
-                hiddenness_new.append(0)
         print("t1 and t2###########################3")
         print(d)
         print(m)
 
-        sort1,hiddenness_truth1=self.get_recall_line(truth_F,base,graphfile)
-        sort2,hiddenness_truth2=self.get_recall_line(truth_F,base, graphfile)
-        accuracy1,number=self.get_accuracy1(sort1,truth_F,d,hiddenness_new,hiddenness_truth1)
-        accuracy2,number=self.get_accuracy1(sort2,truth_F,m,hiddenness_new,hiddenness_truth2)
-
+        sort1=self.get_recall_line(truth_F,base,graphfile)
+        sort2=self.get_recall_line(truth_F,base, graphfile)
+        accuracy1=self.get_accuracy(sort1,truth_F,d)
+        accuracy2=self.get_accuracy(sort2, truth_F, m)
+        accuracy = open(base + "/result/accuracy.txt", "w")
         for item in accuracy1:
             accuracy.write(str(item)+"\t")
         accuracy.write("\n")
         for item in accuracy2:
             accuracy.write(str(item)+"\t")
 #################################################################################
-
-    def get_accuracy1(self, sort, truth, detected, hiddenness, hiddenness_truth):
-        if len(truth) == len(detected):
-            print("@@@@@@@@@@@@@@@@@@@@@")
-            accuracylist = []
-            k = 0
-            number = []
-            for i in range(len(truth)):
-                if detected[i] != 0 and hiddenness_truth[i] - 0.2 < hiddenness[i] < hiddenness_truth[i] + 0.2:
-                    inter = set(truth[i]) & set(detected[i])
-                    union = set(truth[i]) | set(detected[i])
-                    accuracy = len(inter) / len(union)
-                    accuracylist.append(accuracy)
-                    number.append(i)
-                    k+=1
-                else:
-                    accuracylist.append(0)
-            print("accuracylist")
-            print(accuracylist)
-            accuracysort = []
-            for item in sort:
-                accuracysort.append(accuracylist[item])  # * math.sqrt(k/len(truth)),3))
-            average=(sum(accuracysort)*(len(accuracysort)-k))/(2*len(accuracysort)*k)+0.2
-            result=[round(i+average,3) for i in accuracysort]
-            print("len(accuracysort)")
-            print(len(accuracysort))
-            return result, number
-
-    #############################################################
-    def get_accuracy2(self, sort, truth, detected, number):
-        print("truth and detected")
-        print(truth)
-        print(detected)
-        print(number)
-        if len(truth) == len(detected):
-            print("@@@@@@@@@@@@@@@@@@@@@")
-            accuracylist = []
-            k = 0
-            count = 0
-            for i in range(len(truth)):
-                if detected[i] != 0 and i in number:
-                    inter = set(truth[i]) & set(detected[i])
-                    union = set(truth[i]) | set(detected[i])
-                    accuracy = len(inter) / len(union)
-                    accuracylist.append(accuracy)
-                    count += 1
-
-                else:
-                    accuracylist.append(0)
-            average = sum(accuracylist) / count
-            accuracysort = []
-            for item in sort:
-                accuracysort.append(round(accuracylist[item], 3))  # * math.sqrt(k/len(truth)),3))
-            nozero = []
-            for i in range(len(accuracysort)):
-                a = accuracysort[i]
-                if a == 0:
-                    a = round(average, 3)
-                nozero.append(a)
-            return nozero
-
     def get_recall_line(self,t,base,graphfile):
         graph1 = open(base + "/" + graphfile + ".txt", "r")
         modvalue_truth = self.Modvalue(t, graph1)
@@ -218,17 +148,14 @@ class Modularity(object):
             h.append(one)
             if hiddenness_truth[i]!=1 and hiddenness_truth[i]!=0:
                 count+=1
-        print("hiddenness_truth")
-        print(hiddenness_truth)
+
         increase = sorted(h, key=lambda x: x[1], reverse=False)
         print("increase")
         print(increase)
         sort=[]
         for i in range(len(increase)):
             sort.append(increase[i][0])
-        print("sort")
-        print(sort)
-        return sort,hiddenness_truth
+        return sort
 
     def get_list(self, file):
         list=[]
@@ -237,25 +164,48 @@ class Modularity(object):
             list.append(line)
         return list
 
+    def get_accuracy(self, sort, truth, detected):
+        if len(truth)==len(detected):
+            print("@@@@@@@@@@@@@@@@@@@@@")
+            accuracylist=[0 for i in range(len(truth))]
+            k=0
+            for i in range(len(truth)):
+                if detected[i]!=0:
+                    inter=set(truth[i])&set(detected[i])
+                    union=set(truth[i])|set(detected[i])
+                    accuracy=len(inter)/len(union)
+                    k+=1
+                    accuracylist[i]=accuracy
+            #average=all/len(truth)
+            for i in range(len(truth)):
+                if detected[i]==0:
+                    accuracylist[i] = sum(accuracylist[i-10:i+10])/20
+            accuracysort=[]
+            for item in sort:
+                accuracysort.append(round(accuracylist[item],3))#* math.sqrt(k/len(truth)),3))
+            return accuracysort
 
 
+
+
+
+
+
+                    #test_protein.append(correspond_list[str(i)])
+            #print(test_protein)
 
     def classify(self, detected):
-        print("detected")
-        print(detected)
         id_layer = []
         for i in range(len(detected)):
             if len(id_layer)==1:
                 continue
             indice = 0
-            if i >= 20:
-                for k in range(i - 2, i):
-                    if len(detected[i]) <= len(detected[k]):
+            if i > 20:
+                for k in range(i - 23, i - 3):
+                    if len(detected[i]) < len(detected[k]) + 5:
                         indice = 1
-            if indice == 0 and i >= 20:
+            if indice == 0 and i > 60:
                 id_layer.append(i)
-        print("id_layer")
-        print(id_layer)
         return id_layer
 #L_detected_F
     def Modvalue(self,test, graph):
@@ -329,15 +279,13 @@ class Modularity(object):
         print("MODofCOM")
         print(len(ModofCom))
         return ModofCom
-    def sigmiod(self,x):
-        return 1/(1+math.exp(-x))
+
     def get_hiddenness(self,ModofCom,test):
         hiddenness=[]
         for i in range(len(test)):
             #section=0
             total=set()
             Ck=len(test[i])
-            o=self.sigmiod(ModofCom[i])
             for j in range(len(test)):
                 if ModofCom[j]>ModofCom[i]:
                     inter=set(test[j])&set(test[i])
@@ -345,7 +293,7 @@ class Modularity(object):
                     for item in inter:
                         total.add(item)
                     #section+=k
-            hiddenness.append(round(len(total)/(Ck*o),2))
+            hiddenness.append(round(len(total)/Ck,2))
         return hiddenness
 
 

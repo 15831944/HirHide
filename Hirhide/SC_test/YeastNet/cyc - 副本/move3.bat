@@ -1,0 +1,15 @@
+mkdir F:\BioHICODE\SC_test\YeastNet\cyc\detected
+copy hicode_mod_ReduceWeight_3layers\maxOriginlayer1.gen detected\Layer1_Level1.gen
+copy hicode_mod_ReduceWeight_3layers\maxOriginlayer2.gen detected\Layer2_Level1.gen
+copy hicode_mod_ReduceWeight_3layers\maxOriginlayer3.gen detected\Layer3_Level1.gen
+
+
+copy hicode_mod_ReduceWeight_3layers_ori_sub\Layer_1_Level_2.gen detected\Layer1_Level2.gen
+copy hicode_mod_ReduceWeight_3layers_ori_sub\Layer_2_Level_2.gen detected\Layer2_Level2.gen
+copy hicode_mod_ReduceWeight_3layers_ori_sub\Layer_3_Level_2.gen detected\Layer3_Level2.gen
+
+
+
+copy hicode_mod_ReduceWeight_3layers_ori_sub\Layer_1_Level_3.gen detected\Layer1_Level3.gen
+copy hicode_mod_ReduceWeight_3layers_ori_sub\Layer_2_Level_3.gen detected\Layer2_Level3.gen
+copy hicode_mod_ReduceWeight_3layers_ori_sub\Layer_3_Level_3.gen detected\Layer3_Level3.gen

@@ -1,0 +1,236 @@
+TRAPP complex
+histone deacetylase complex
+Ada2p/Gcn5p/Ada3 transcription activator complex
+chromatin accessibility complex
+eEF1
+Cbf1p/Met4p/Met28p complex
+Prp9p/Prp11p/Prp21p complex(SF3a complex)
+Met4p/Met28p/Met31p complex
+Exocyst complex
+Ssh1p translocon complex
+TRAMP complex (Air2p)
+cAMP-dependent protein kinase
+Arp2/3 protein complex
+GINS complex
+ribonuclease H2 complex
+20S proteasome
+DNA-directed RNA polymerase II complex
+Rad17p/Ddc1p/Mec3p complex
+transcription factor TFIIIC complex
+HIR complex
+nucleotide-excision repair factor 4 complex
+Telomerase
+Sko1p/Cyc8p/Tup1 repressor complex
+Nup84p complex
+Origin recognition complex
+mitochondrial sorting and assembly machinery complex
+"H+-transporting ATPase, vacuolar"
+nucleolar ribonuclease P complex
+GARP complex
+DNA replication factor C complex (Rad24p)
+ESCRT II complex
+CCAAT-binding factor complex
+RES complex
+ribonuclease MRP complex
+mitochondrial ATPase inhibitor complex
+tRNA-intron endonuclease complex
+box C/D snoRNP complex
+commitment complex
+Dig1p/Ste12p/Dig2p complex
+U6 snRNP complex
+histone H2A phosphatase complex
+Mdm12p/Mmm1p/Mdm10p complex
+alpha DNA polymerase:primase complex
+mRNA cleavage and polyadenylation specificity factor complex
+chromatin silencing complex
+mitotic checkpoint complex
+Snf1p/Snf4p/Sip1p complex
+SNARE complex
+"alpha,alpha-trehalose-phosphate synthase complex (UDP-forming)"
+Ino80p complex
+Kornberg's mediator (SRB) complex
+VTC heterotetrameric complex
+oligosaccharyl transferase complex
+TORC 1 complex
+SWI/SNF complex
+SCF-CDC4 complex
+karyopherin docking subcomplex of the Nuclear Pore Complex (NPC)
+DNA polymerase delta complex
+eIF4F
+DNA polymerase epsilon complex
+eIF3
+nascent polypeptide-associated complex
+AP-1 adaptor complex
+Synaptonemal complex (SC)
+NatC complex
+NatA complex
+DNA replication factor C complex (Elg1p)
+chromatin assembly complex
+COPII
+Sro1p/Sec4p/Sec9p complex
+nuclear ubiquitin ligase complex
+mitochondrial inner membrane protein insertion complex
+retromer complex
+Golgi transport complex
+Kel1p/Kel2p/Lte1p complex
+Nucleosomal protein complex
+GET complex
+DNA-directed RNA polymerase I complex
+F0/F1 ATP synthase (complex V)
+mitochondrial ribosomal large subunit
+U5 snRNP complex
+Signal recognition particle (SRP)
+ARGR complex
+chaperonin-containing T-complex
+THO complex
+cytoplasmic dynein complex
+Ski Complex
+transcription factor TFIIF complex
+RAVE complex
+Sec62p/Sec63p complex
+Elongator complex
+NuA3 histone acetyltransferase complex
+phosphatidylinositol (PtdIns) 3-kinase complex (functions in autophagy)
+eIF2
+DNA replication factor C complex (Rcf1p)
+mitochondrial oxoglutarate dehydrogenase complex
+COMA complex
+SPB components
+ubiquitin ligase ERAD-L complex
+ESCRT I complex
+HAT-B complex
+RING finger peroxin complex
+protein phosphatase type 2A complex (Cdc55p)
+U4/U6 x U5 tri-snRNP complex
+RENT complex
+DNA-directed RNA polymerase III complex
+DNA replication factor C complex (Ctf18p/Ctf8p/dcc1p)
+smc5p-Smc6p complex
+Chz1p/Htz1p/Htb1p complex
+transcription factor TFIIIB complex
+Npa2p-containing subcomplex
+"Cytochrome bc1 complex (Ubiquinol-cytochrome c reductase complex, complex III)"
+STE5-MAPK complex
+carboxy-terminal domain protein kinase complex
+ribonucleoside-diphosphate reductase complex
+EGO complex
+gamma-tubulin complex
+"actin cytoskeleton-regulatory complex, Pan1p/Sla1p/End3p complex"
+CCR4-NOT core complex
+GPI-anchor transamidase complex
+MRX complex
+Rpd3L complex
+U2 snRNP complex
+Cytochrome c oxidase (complex IV)
+AP-2 adaptor complex
+Cdc73p/Paf1p complex
+TORC 2 complex
+glycine cleavage complex
+MIND complex
+DNA replication factor A complex
+PAM complex
+DASH complex
+FBP degradation complex
+EKC/KEOPS protein complex
+cytoplasmic ribosomal large subunit
+Nup82 nuclear pore subcomplex
+Snf1p/Snf4p/Gal83p complex
+Cul3p-RING ubiquitin ligase complex
+transcription factor TFIIH complex
+Apg12p/Apg5p/Apg16 multimeric complex
+transcription factor TFIID complex
+Ndc80p complex
+Hym1p/Kic1p/Sog2p complex
+UTP A complex
+Polzeta-Rev1p complex
+nuclear cohesin complex
+Cdc24p/Far1p/Gbetagamma protein complex
+methionyl glutamyl tRNA synthetase complex
+signal peptidase complex
+Nuclear exosome complex
+Nonsense-mediated mRNA decay pathway complex
+SF3b complex
+NuA4 histone acetyltransferase complex
+protein kinase CK2 complex
+SAS Complex
+COPI
+Set3p complex
+nucleotide-excision repair factor 1 complex
+Tof1p/Mrc1p/Csm3p complex
+Swr1p complex
+anaphase-promoting complex
+Succinate dehydrogenase complex (complex II)
+heterotrimeric G-protein complex
+Tap42p/Sit4p/Rrd1p complex
+meiotic recombination initiation complex
+"alpha-1,6-mannosyltransferase complex(Anp1p/Mnn9p)"
+Nsp1p complex
+Rpd3S complex
+Mcm2-7 complex
+GSE Complex
+Cytoplasmic exosome complex
+RSC complex
+UTP C complex
+GSH degradosomal complex
+RNA Degradation Complex
+Cdc48p complex
+protein phosphatase type 2A complex (Rts1p)
+Cox14p/Cox1p/Mss51p complex
+CORVET complex
+Atg20p/Snx4p/Snx41p complex
+multi-eIF complex
+prefoldin complex
+SAGA complex
+Prp19-associated complex
+transcription export complex
+mitochondrial inner membrane peptidase complex
+"H+-transporting ATPase, Golgi"
+nucleotide-excision repair factor 3 complex
+Chs5p/Arf-1binding proteins (ChAPs)
+nuclear condensin complex
+Far3p/Far7p/Far8p/Far9p/Far10p/Far11p complex
+Fatty Acid Import Complex
+OCA complex
+mitochondrial pyruvate dehydrogenase complex
+Mps2p/Bbp1p complex
+SLIK (SAGA-like) complex
+mRNA cleavage factor complex (CFI)
+peroxin docking complex
+Met4p/Met28p/Met32p complex
+cytoplasmic ribosomal small subunit
+glycosylphosphatidylinositol-N-acetylglucosaminyltransferase (GPI-GnT) complex
+phosphatidylinositol (PtdIns) 3-kinase complex (functions in CPY sorting)
+Sec61p translocon complex
+ESCRT III complex
+Mgm1p/Ugo1p/Fzo1p complex
+ISW1b complex
+HOPS complex
+19/22S regulator
+RecQ helicase-Topo III complex
+Snf1p/Snf4p/Sip2p complex
+polarisome complex
+RNA polymerase I upstream activating factor complex
+AP-3 adaptor complex
+mitochondrial outer membrane translocase complex
+COMPASS complex
+UTP B complex
+Ctf3p protein complex
+Sum1p/Rfm1p/Hst1p complex
+Ntr1p/Ntr2p/Prp43p complex
+Rix1p complex
+RNA polymerase I transcription factor complex
+mitochondrial inner membrane presequence translocase complex
+U1 snRNP complex
+dynactin complex
+signalosome complex
+CBF3 complex
+HMC Complex
+TRAMP complex (Air1p)
+calcineurin complex
+eIF2B
+mitochondrial ribosomal small subunit
+monopolin complex
+CURI complex
+luminal surveillance complex
+Tap42p/Pph21p/Rrd2p complex
+Dsl1p complex
